@@ -1,0 +1,103 @@
+// _variables.scss
+$dark-bg: #1a1a1a;
+$light-bg: #ffffff;
+$primary-color: #3b82f6;
+$text-dark: #1a1a1a;
+$text-light: #ffffff;
+
+// _mixins.scss
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+// styles.scss
+.portfolio {
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.dark-mode {
+    background-color: $dark-bg;
+    color: $text-light;
+
+    .nav-bar {
+      background-color: rgba($dark-bg, 0.8);
+    }
+
+    .project-card {
+      background-color: lighten($dark-bg, 10%);
+    }
+  }
+
+  .nav-bar {
+    position: fixed;
+    width: 100%;
+    padding: 1rem;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    @include flex-center;
+    justify-content: space-between;
+  }
+
+  .hero-section {
+    min-height: 100vh;
+    @include flex-center;
+    flex-direction: column;
+    padding: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      @include responsive(tablet) {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      @include flex-center;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: rgba($primary-color, 0.1);
+      }
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    gap: 1.5rem;
+
+    @include responsive(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .project-card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+}

@@ -1,0 +1,470 @@
+/* Global styles */
+html {
+  scroll-padding-top: 130px; /* Adjust this value to match your header's height */
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* Clean white background */
+  color: #202124; /* Near black for text */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #202124; /* Simple dark background */
+  color: #f5f5f5;
+}
+
+/* App container */
+.app {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgb(41, 196, 196);
+  position: fixed; /* Fixes the header at the top */
+  opacity: 1;
+  width: 96%; /* Make the header span the entire width */
+  z-index: 1000; /* Ensures the header stays above other content */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  .dark-mode-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &.dark-mode {
+    background-color: #202124;
+  }
+}
+
+header h1 {
+  color: #f5f5f5; /* Set a solid color for the text */
+  opacity: 1; /* Ensure the text is fully opaque */
+  z-index: 1001;
+  background: none;
+}
+
+.dark-mode header {
+  background-color: #2f2f32;
+}
+
+/* Section styles */
+main {
+  padding: 2rem;
+  padding-left: 14rem;
+  padding-right: 14rem;
+}
+
+section {
+  margin-bottom: 3rem;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: rgb(41, 196, 196);
+    position: relative;
+  }
+
+  p,
+  span {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Dark mode section styles */
+.dark-mode section {
+  background-color: #2f2f32;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #cccccc;
+}
+
+.dark-mode section h2 {
+  color: #f5f5f5;
+}
+
+/* About section */
+#about {
+  display: flex;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Flex styling for text */
+#about .about-text {
+  flex: 1;
+  max-width: 60%; /* Adjusts text width */
+}
+
+#about .about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: rgb(41, 196, 196);
+  position: relative;
+}
+
+#technologies h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 190px;
+  height: 4px;
+  background: rgb(41, 196, 196);
+  border-radius: 2px;
+}
+
+#projects h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 130px;
+  height: 4px;
+  background: rgb(41, 196, 196);
+  border-radius: 2px;
+}
+
+#connect h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 258px;
+  height: 4px;
+  background: rgb(41, 196, 196);
+  border-radius: 2px;
+}
+
+#contact h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 130px;
+  height: 4px;
+  background: rgb(41, 196, 196);
+  border-radius: 2px;
+}
+
+#about .about-text h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 150px;
+  height: 3px;
+  background: rgb(41, 196, 196);
+  border-radius: 2px;
+}
+
+#about .about-text p,
+#about .about-text span {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Image styling */
+#about .about-photo {
+  flex: 1;
+  max-width: 25%; /* Adjusts photo width */
+  display: flex;
+  justify-content: center;
+}
+
+#about .about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Dark mode specific styles for About section */
+body.dark-mode #about {
+  background-color: #2f2f32;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode #about .about-text h2 {
+  color: #ffffff;
+}
+
+body.dark-mode #about .about-text p {
+  color: #cccccc;
+}
+
+body.dark-mode #about .about-photo img {
+  border-radius: 8px;
+  filter: brightness(
+    0.8
+  ); /* Optional: Add a slight darkening effect on the image */
+}
+
+.tech-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+
+  .icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon {
+    transition: transform 0.3s; /* Smooth scaling on hover */
+
+    &:hover {
+      transform: scale(1.2); /* Zoom effect */
+    }
+  }
+
+  .react-icon {
+    color: #61dafb; /* React blue */
+  }
+
+  .html-icon {
+    color: #e34c26; /* HTML orange */
+  }
+
+  .css-icon {
+    color: #1572b6; /* CSS blue */
+  }
+
+  .js-icon {
+    color: #f7df1e; /* JavaScript yellow */
+  }
+
+  .redux-icon {
+    color: #764abc;
+  }
+  .sql-icon {
+    color: #003b57; /* SQL dark blue */
+  }
+
+  .git-icon {
+    color: #f05033; /* Git red-orange */
+  }
+
+  .azure-icon {
+    color: #0078d4; /* Azure blue */
+  }
+
+  .postman-icon {
+    color: #ff6c37; /* Postman orange */
+  }
+}
+
+/* Social media links */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  a {
+    transition: opacity 0.3s;
+    padding: 0.5rem;
+    border-radius: 50%;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+}
+
+.linkedin {
+  color: #0a66c2;
+}
+
+.github {
+  color: #151013;
+}
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #f5f5f5;
+  color: rgb(41, 196, 196);
+}
+
+.dark-mode footer {
+  background-color: #202124; /* Simple dark background */
+  color: #f5f5f5;
+}
+
+#connect {
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .connect-form {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 1rem;
+    max-width: 600px; /* Limit the form width */
+
+    input,
+    textarea {
+      width: 100%; /* Take full width of the container */
+      padding: 0.8rem;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+
+      &:focus {
+        outline: none;
+        border-color: rgb(41, 196, 196); /* Highlight input on focus */
+      }
+    }
+
+    textarea {
+      height: 150px;
+      resize: none; /* Disable resizing */
+    }
+    button {
+      background-color: rgb(41, 196, 196);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s; /* Include transition for transform */
+      width: 104%;
+    }
+
+    button:hover {
+      transform: scale(
+        0.9
+      ); /* Slightly scale up without affecting the button's size */
+    }
+
+    .status-message {
+      font-size: 1rem;
+      color: #28a745; /* Success message color */
+    }
+  }
+}
+
+.dark-mode #connect h2 {
+  color: #f5f5f5;
+}
+
+.dark-mode #connect button {
+  background-color: #fff;
+  color: rgb(41, 196, 196);
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.download-resume {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: rgb(41, 196, 196); /* Use the Redux primary color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.download-resume:hover {
+  transform: scale(0.9); /* Zoom effect */
+}
+
+.dark-mode .download-resume {
+  background-color: #fff;
+  color: rgb(41, 196, 196);
+}
+
+.about-skills {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.about-skills p {
+  padding: 2%;
+  border: 2px solid rgb(41, 196, 196);
+  border-radius: 5px 15px;
+}
+
+header nav {
+  margin-left: auto; /* Aligns nav links to the right of the header */
+  margin-right: 2rem; /* Add spacing before the dark mode toggle */
+}
+
+header nav ul {
+  display: flex;
+  gap: 1.5rem; /* Spacing between links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #202124; /* Hover color for links */
+}
+
+/* Dark mode styles */
+body.dark-mode header {
+  background-color: #202124;
+}
+
+body.dark-mode header nav ul li a {
+  color: #cccccc;
+}
+
+body.dark-mode header nav ul li a:hover {
+  color: #61dafb; /* Optional: React blue for hover effect in dark mode */
+}
