@@ -468,3 +468,156 @@ body.dark-mode header nav ul li a {
 body.dark-mode header nav ul li a:hover {
   color: #61dafb; /* Optional: React blue for hover effect in dark mode */
 }
+
+/* Global styles */
+html {
+  scroll-padding-top: 130px; /* Adjust this value to match your header's height */
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* Clean white background */
+  color: #202124; /* Near black for text */
+  transition: background-color 0.3s, color 0.3s;
+}
+/* Mobile styles */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 100px; /* Reduce padding for smaller header height */
+  }
+
+  body {
+    font-size: 90%; /* Slightly smaller font size */
+  }
+
+  header {
+    padding: 0.5rem 1rem;
+    flex-direction: column; /* Stack header content vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  header h1 {
+    font-size: 1.5rem; /* Reduce header text size */
+    margin-bottom: 0.5rem; /* Add spacing below the title */
+  }
+
+  header nav ul {
+    flex-direction: column; /* Stack navigation links */
+    gap: 0.5rem; /* Adjust spacing between links */
+    width: 100%; /* Take full width */
+  }
+
+  header nav ul li a {
+    font-size: 1rem; /* Slightly smaller link size */
+  }
+
+  .dark-mode-toggle {
+    font-size: 1.2rem; /* Adjust size of the toggle */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1rem; /* Add spacing above the toggle */
+    padding-left: 0.5rem; /* Align with nav links */
+    width: 100%; /* Take full width */
+  }
+
+  main {
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  #about {
+    flex-direction: column; /* Stack about section content vertically */
+    align-items: flex-start; /* Align items to the left */
+    margin-top: 70px; /* Adjust top margin */
+  }
+
+  #about .about-text {
+    max-width: 100%; /* Use full width for text */
+    margin-bottom: 1rem; /* Add spacing between text and image */
+    margin-top: 3rem;
+  }
+
+  #about .about-photo {
+    max-width: 100%; /* Use full width for the image */
+  }
+
+  #about .about-photo img {
+    width: 80%; /* Reduce image size for mobile */
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(2, 1fr); /* Fewer icons per row */
+  }
+
+  #connect .connect-form {
+    gap: 0.5rem; /* Reduce spacing between form elements */
+    padding: 0 1rem; /* Add padding to the form */
+  }
+
+  .social-media {
+    flex-direction: column; /* Stack social media links */
+    gap: 1rem; /* Adjust spacing between icons */
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  #about {
+    flex-direction: column;
+    margin-top: 80px;
+  }
+
+  #about .about-text {
+    max-width: 90%;
+  }
+
+  #about .about-photo {
+    max-width: 80%;
+  }
+
+  .tech-icons {
+    grid-template-columns: repeat(3, 1fr); /* Adjust columns for tablet */
+  }
+
+  .social-media {
+    flex-direction: row; /* Keep icons in a row for tablets */
+  }
+}
+
+/* Other styles remain unchanged */
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #f5f5f5;
+  color: rgb(41, 196, 196);
+}
+
+.dark-mode footer {
+  background-color: #202124;
+  color: #f5f5f5;
+}
